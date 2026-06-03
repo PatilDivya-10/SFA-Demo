@@ -1,15 +1,9 @@
 services:
   - type: web
-    name: smart-fashion-advisor
+    name: flask-app
     env: python
-    plan: free
-
-    buildCommand: |
-      pip install --upgrade pip
-      pip install -r requirements.txt
-
+    buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers 1 --threads 4 --timeout 180 --keep-alive 5
-
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.9
