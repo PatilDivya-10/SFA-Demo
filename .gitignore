@@ -9,3 +9,4 @@ venv/
 .cursor/
 .DS_Store
 *.log
+*.sqlite3
